@@ -2,20 +2,24 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.example.controlcell.Controller">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="1098.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.example.controlcell.Controller">
   <tabs>
     <Tab text="zwierze">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: grey;">
                <children>
-                  <ImageView fx:id="ImageView" fitHeight="197.0" fitWidth="331.0" layoutX="261.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageView" fitHeight="394.0" fitWidth="549.0" layoutX="635.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/kot.jpg" />
                      </image>
@@ -27,13 +31,23 @@
                   </RadioButton>
                   <RadioButton fx:id="radioDog" layoutX="67.0" layoutY="95.0" mnemonicParsing="false" text="pies" toggleGroup="$animal" />
                   <RadioButton fx:id="radioTurtle" layoutX="67.0" layoutY="148.0" mnemonicParsing="false" text="żółw" toggleGroup="$animal" />
-                  <Label fx:id="lblInfo" alignment="CENTER" layoutX="29.0" layoutY="267.0" prefHeight="56.0" prefWidth="162.0" text="Zaznaczono obrazek z kotem" wrapText="true" />
+                  <Label fx:id="lblInfo" alignment="CENTER" layoutX="90.0" layoutY="348.0" prefHeight="56.0" prefWidth="162.0" text="Zaznaczono obrazek z kotem" wrapText="true" />
                </children></AnchorPane>
       </content>
     </Tab>
-    <Tab text="Untitled Tab 2">
+    <Tab text="kwadrat">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: grey;">
+               <children>
+                  <Slider fx:id="slider" layoutX="64.0" layoutY="17.0" orientation="VERTICAL" prefHeight="499.0" prefWidth="14.0" value="50.0" />
+                  <ScrollBar fx:id="scrollBar" layoutX="103.0" layoutY="29.0" prefHeight="35.0" prefWidth="893.0" value="50.0" />
+                  <Rectangle fx:id="rect" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="103.0" layoutY="90.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Label fx:id="lblSize" alignment="CENTER" layoutX="877.0" layoutY="417.0" prefHeight="91.0" prefWidth="201.0" textAlignment="CENTER">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
       </content>
     </Tab>
   </tabs>
