@@ -4,6 +4,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -50,5 +51,15 @@
                </children></AnchorPane>
       </content>
     </Tab>
+      <Tab text="spiner">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: grey;">
+               <children>
+                  <Spinner fx:id="spinner" layoutX="64.0" layoutY="27.0" prefHeight="88.0" prefWidth="282.0" />
+                  <Label fx:id="lblNumbers" alignment="TOP_LEFT" layoutX="467.0" layoutY="27.0" prefHeight="521.0" prefWidth="589.0" wrapText="true" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
   </tabs>
 </TabPane>

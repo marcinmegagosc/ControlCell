@@ -43,10 +43,17 @@ public class Controller implements Initializable {
     @FXML
     private Label lblSize;
 
+    @FXML
+    private Spinner<Integer> spinner;
+
+    @FXML
+    private Label lblNumbers;
+
 
     Image dog = new Image(String.valueOf(getClass().getResource("/images/pies.jpg")));
     Image cat = new Image(String.valueOf(getClass().getResource("/images/kot.jpg")));
     Image turtle = new Image(String.valueOf(getClass().getResource("/images/zolw.jpg")));
+    StringBuilder numbers = new StringBuilder("100");
 
 
     @Override
@@ -69,6 +76,7 @@ public class Controller implements Initializable {
                 rect.setWidth(300 *slider.getValue()/slider.getMax());
                 rect.setHeight(240 *slider.getValue()/slider.getMax());
                 scrollBar.setValue(slider.getValue());
+                lblSize.setText((int)(300 *slider.getValue()/slider.getMax()) + " x " + ((int)(240 *slider.getValue()/slider.getMax())));
 
             }
         });
@@ -82,5 +90,17 @@ public class Controller implements Initializable {
 
             }
         });
+
+        SpinnerValueFactory<Integer> spinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(50,150,100,10);
+        spinner.setValueFactory(spinnerValueFactory);
+
+        spinner.valueProperty().addListener(new ChangeListener<Integer>() {
+            @Override
+            public void changed(ObservableValue<? extends Integer> observableValue, Integer integer, Integer t1) {
+                numbers.append("\n").append(spinnerValueFactory.getValue());
+                lblNumbers.setText(String.valueOf(numbers));
+            }
+        });
+
     }
 }
